@@ -18,13 +18,13 @@
 </head>
 <body class="bg-light">
     <div id="app" class="container py-5">
-        <h1 class="text-center mb-5">Random Song Generator</h1>
-        <div class="text-center mb-4">
-            <button type="button" @click="generateSong" class="btn btn-primary btn-lg">
-                <span class="btn-inner--icon"><i class="material-icons ">music_note</i></span>
-                <span class="btn-inner--text">Generate Song</span>                
+        <h1 class="text-center mb-5">Random Song Generator</h1>        
+        <div class="d-flex justify-content-center">
+            <button type="button" @click="generateSong" class="btn btn-primary btn-lg d-flex align-items-center justify-content-center">
+                <i class="material-icons me-2">music_note</i>
+                <span>Generate Song</span>
             </button>
-        </div>
+        </div>        
         
         <div v-if="song" class="card">
             <div class="card-header text-center">
