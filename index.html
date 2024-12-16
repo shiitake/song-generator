@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script type="module" src="songGenerator.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Random Song Generator</h1>
+        <button @click="generateSong">Generate Song</button>
+        <div v-if="song">
+            <p><strong>BPM:</strong> {{ song.bpm }}</p>
+            <p><strong>Key:</strong> {{ song.key }}</p>
+            <p><strong>Verse:</strong> {{ song.verse }}</p>
+            <p><strong>Chorus:</strong> {{ song.chorus }}</p>
+            <p><strong>Bridge:</strong> {{ song.bridge }}</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { generateSong } from './songGenerator.js';
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    song: null
+                };
+            },
+            methods: {
+                generateSong() {
+                    this.song = generateSong();
+                }
+            }
+        });
+
+        app.mount("#app");
+    </script>
+</body>
+</html>
