@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <!-- Material Kit 2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@creative-tim-official/material-kit@3.0.0/dist/css/material-kit.min.css" rel="stylesheet">
+
     <script type="module" src="songGenerator.js"></script>
 </head>
-<body>
-    <div id="app">
-        <h1>Random Song Generator</h1>
-        <button @click="generateSong">Generate Song</button>
-        <div v-if="song">
-            <p><strong>BPM:</strong> {{ song.bpm }}</p>
-            <p><strong>Key:</strong> {{ song.key }}</p>
-            <p><strong>Verse:</strong> {{ song.verse }}</p>
-            <p><strong>Chorus:</strong> {{ song.chorus }}</p>
-            <p><strong>Bridge:</strong> {{ song.bridge }}</p>
+<body class="bg-light">
+    <div id="app" class="container py-5">
+        <h1 class="text-center mb-5">Random Song Generator</h1>
+        <div class="text-center mb-4">
+            <button @click="generateSong">Generate Song</button>
+        </div>
+        
+        <div v-if="song" class="card">
+            <div class="card-header text-center">
+                <h4>Song Details</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>BPM:</strong> {{ song.bpm }}</p>
+                <p><strong>Key:</strong> {{ song.key }}</p>
+                <p><strong>Verse:</strong> {{ song.verse }}</p>
+                <p><strong>Chorus:</strong> {{ song.chorus }}</p>
+                <p><strong>Bridge:</strong> {{ song.bridge }}</p>
+            </div>
         </div>
     </div>
 
@@ -38,5 +49,8 @@
 
         app.mount("#app");
     </script>
+    <!-- Material Kit 2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/@creative-tim-official/material-kit@3.0.0/dist/js/material-kit.min.js"></script>
+
 </body>
 </html>
