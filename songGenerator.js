@@ -3,36 +3,39 @@ export function generateSong() {
         nextInt: (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
     };
 
-    const chordList = ["A", "A#", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab"];
+    const sharpSymbol = "\u266F";
+    const flatSymbol = "\u266D"
+
+    const chordList = [`A`, `A${sharpSymbol}`, `B`, `C`, `C${sharpSymbol}`, `D`, `E${flatSymbol}`, `E`, `F`, `F${sharpSymbol}`, `G`, `A${flatSymbol}`];
 
     const majorChordMatrix = [
-        ["A", "B", "C#", "D", "E", "F#", "G#", "A"],
-        ["A#", "C", "D", "Eb", "F", "G", "A", "A#"],
-        ["B", "C#", "Eb", "E", "F#", "G#", "A#", "B"],
+        [`A`, `B`, `C${sharpSymbol}`, `D`, `E`, `F${sharpSymbol}`, `G${sharpSymbol}`, `A`],
+        [`A${sharpSymbol}`, "C", "D", `E${flatSymbol}`, "F", "G", "A", `A${sharpSymbol}`],
+        ["B", `C${sharpSymbol}`, `E${flatSymbol}`, "E", `F${sharpSymbol}`, `G${sharpSymbol}`, `A${sharpSymbol}`, "B"],
         ["C", "D", "E", "F", "G", "A", "B", "C"],
-        ["C#", "Eb", "F", "F#", "G#", "A#", "C", "C#"],
-        ["D", "E", "F#", "G", "A", "B", "C#", "D"],
-        ["Eb", "F", "G", "Ab", "Bb", "C", "D", "Eb"],
-        ["E", "F#", "G#", "A", "B", "C#", "D#", "E"],
-        ["F", "G", "A", "Bb", "C", "D", "E", "F"],
-        ["F#", "G#", "A#", "B", "C#", "D#", "F", "F#"],
-        ["G", "A", "B", "C", "D", "E", "F#", "G"],
-        ["Ab", "Bb", "C", "Db", "Eb", "F", "G", "Ab"]
+        [`C${sharpSymbol}`, `E${flatSymbol}`, "F", `F${sharpSymbol}`, `G${sharpSymbol}`, `A${sharpSymbol}`, "C", `C${sharpSymbol}`],
+        ["D", "E", `F${sharpSymbol}`, "G", "A", "B", `C${sharpSymbol}`, "D"],
+        [`E${flatSymbol}`, "F", "G", `A${flatSymbol}`, `B${flatSymbol}`, "C", "D", `E${flatSymbol}`],
+        ["E", `F${sharpSymbol}`, `G${sharpSymbol}`, "A", "B", `C${sharpSymbol}`, `D${sharpSymbol}`, "E"],
+        ["F", "G", "A", `B${flatSymbol}`, "C", "D", "E", "F"],
+        [`F${sharpSymbol}`, `G${sharpSymbol}`, `A${sharpSymbol}`, "B", `C${sharpSymbol}`, `D${sharpSymbol}`, "F", `F${sharpSymbol}`],
+        ["G", "A", "B", "C", "D", "E", `F${sharpSymbol}`, "G"],
+        [`A${flatSymbol}`, `B${flatSymbol}`, "C", `D${flatSymbol}`, `E${flatSymbol}`, "F", "G", `A${flatSymbol}`]
     ];
 
     const minorChordMatrix = [
         ["A", "B", "C", "D", "E", "F", "G", "A"],
-        ["A#", "C", "C#", "Eb", "F", "F#", "G#", "A#"],
-        ["B", "C#", "D", "E", "F#", "G", "A", "B"],
-        ["C", "D", "Eb", "F", "G", "Ab", "A#", "C"],
-        ["C#", "Eb", "E", "F#", "G#", "A", "B", "C#"],
-        ["D", "E", "F", "G", "A", "A#", "C", "D"],
-        ["Eb", "F", "F#", "Ab", "Bb", "B", "C#", "Eb"],
-        ["E", "F#", "G", "A", "B", "C", "D", "E"],
-        ["F", "G", "Ab", "Bb", "C", "C#", "D#", "F"],
-        ["F#", "G#", "A", "B", "C#", "D", "E", "F#"],
-        ["G", "A", "A#", "C", "D", "Eb", "F", "G"],
-        ["Ab", "Bb", "B", "Db", "Eb", "E", "F#", "Ab"]
+        [`A${sharpSymbol}`, "C", `C#`, `E${flatSymbol}`, "F", `F${sharpSymbol}`, `G${sharpSymbol}`, `A${sharpSymbol}`],
+        ["B", `C${sharpSymbol}`, "D", "E", `F${sharpSymbol}`, "G", "A", "B"],
+        ["C", "D", `E${flatSymbol}`, "F", "G", `A${flatSymbol}`, `A${sharpSymbol}`, "C"],
+        [`C${sharpSymbol}`, `E${flatSymbol}`, "E", `F${sharpSymbol}`, `G${sharpSymbol}`, "A", "B", `C${sharpSymbol}`],
+        ["D", "E", "F", "G", "A", `A${sharpSymbol}`, "C", "D"],
+        [`E${flatSymbol}`, "F", `F${sharpSymbol}`, `A${flatSymbol}`, `B${flatSymbol}`, "B", `C${sharpSymbol}`, `E${flatSymbol}`],
+        ["E", `F${sharpSymbol}`, "G", "A", "B", "C", "D", "E"],
+        ["F", "G", `A${flatSymbol}`, `B${flatSymbol}`, "C", `C${sharpSymbol}`, `D${sharpSymbol}`, "F"],
+        [`F${sharpSymbol}`, `G${sharpSymbol}`, "A", "B", `C${sharpSymbol}`, "D", "E", `F${sharpSymbol}`],
+        ["G", "A", `A${sharpSymbol}`, "C", "D", `E${flatSymbol}`, "F", "G"],
+        [`A${flatSymbol}`, `B${flatSymbol}`, "B", `D${flatSymbol}`, `E${flatSymbol}`, "E", `F${sharpSymbol}`, `A${flatSymbol}`]
     ];
 
     function getRandomInt(min, max) {
